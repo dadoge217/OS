@@ -24,4 +24,8 @@ $ ./producer & ./consumer
 ```
 # Example
 https://github.com/user-attachments/assets/4d7070d4-154e-496a-8b10-eb28409dfe92
+Example 1: Producer is run in the background; consumer is run in the foreground
+
+https://github.com/user-attachments/assets/fbb50aea-e7c3-49d3-b9e8-d9763de08287
+Example 2: Producer and consumer are both run in the background
 
