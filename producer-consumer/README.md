@@ -27,20 +27,19 @@ The following libraries are used in this program:
 <random>
 <cstring>
 ```
-Hardware Versions used:
-Visual Studio Code v1.98.2
-OS: Windows_NT x64 10.0.26100
+Hardware Versions used:  
+Visual Studio Code v1.98.2  
+OS: Windows_NT x64 10.0.26100  
 # Compilation
-Steps before compilation:
-```
-1. Load Visual Studio Code in a Linux/UNIX environment
-2. Use the terminal and enter the datapath to the folder
-```
+Steps before compilation:  
+  1. Load Visual Studio Code in a Linux/UNIX environment  
+  2. Use the terminal and enter the datapath to the folder
+
 The consumer and producer are separate files. To compile, run:
 ```
 $ g++ producer.cpp -pthread -lrt -o producer
 $ g++ consumer.cpp -pthread -lrt -o consumer
-$ ./producer & ./consumer
+$ ./producer & ./consumer &
 ```
 # Example
 https://github.com/user-attachments/assets/4d7070d4-154e-496a-8b10-eb28409dfe92
