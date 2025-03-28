@@ -1,14 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <sys/shm.h>
-#include <sys/stat.h>
-#include <sys/mman.h>
-#include <semaphore.h>
-#include <unistd.h>
-#include <pthread.h>
-#include <iostream>
-#include <cstring>
+#include "header.hpp"
 
 const int SIZE = 4096;
 const char* name = "shared.txt";
