@@ -22,4 +22,3 @@ $ g++ producer.cpp -pthread -lrt -o producer
 $ g++ consumer.cpp -pthread -lrt -o consumer
 $ ./producer & ./consumer
 ```
-https://github.com/dadoge217/OS/blob/210f58ca777751ac86af85860fb31793c75d13ee/producer-consumer/2025-03-28%2016-49-13.mkv
