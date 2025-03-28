@@ -17,27 +17,46 @@ const char* name = "shared.txt";
 void* produce(void* arg) {
     int shm_fd;
     char* ptr;
+
+    // Create shared memory object
     shm_fd = shm_open(name, O_CREAT | O_RDWR, 0666);
     if (shm_fd == -1) {
         perror("shm_open");
-        return NULL;
+        exit(EXIT_FAILURE);
     }
 
+    // Set the size of the shared memory object
     if (ftruncate(shm_fd, SIZE) == -1) {
         perror("ftruncate");
         close(shm_fd);
-        return NULL;
+        exit(EXIT_FAILURE);
     }
 
+    // Map the shared memory object into the process's address space
     ptr = (char*)mmap(0, SIZE, PROT_WRITE, MAP_SHARED, shm_fd, 0);
     if (ptr == MAP_FAILED) {
         perror("mmap");
         close(shm_fd);
-        return NULL;
+        exit(EXIT_FAILURE);
     }
 
-    sem_t* sem_empty = sem_open("/sem_empty", O_CREAT, 0666, 1);
-    sem_t* sem_full = sem_open("/sem_full", O_CREAT, 0666, 0);
+    // Create semaphores
+    sem_t* sem_empty = sem_open("/sem_Empty", O_CREAT, 0666, 1);
+    if (sem_empty == SEM_FAILED) {
+        perror("sem_open (sem_Empty)");
+        munmap(ptr, SIZE);
+        close(shm_fd);
+        exit(EXIT_FAILURE);
+    }
+
+    sem_t* sem_full = sem_open("/sem_Full", O_CREAT, 0666, 0);
+    if (sem_full == SEM_FAILED) {
+        perror("sem_open (sem_Full)");
+        sem_close(sem_empty);
+        munmap(ptr, SIZE);
+        close(shm_fd);
+        exit(EXIT_FAILURE);
+    }
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -48,7 +67,7 @@ void* produce(void* arg) {
 
         int random_number1 = dis(gen);
         int random_number2 = dis(gen);
-        sprintf(ptr, "Random number 1: %d, Random number 2: %d", random_number1, random_number2);
+        sprintf(ptr, "%d, %d", random_number1, random_number2);
         std::cout << "Produced: " << random_number1 << ", " << random_number2 << std::endl;
 
         sem_post(sem_full);
@@ -57,8 +76,6 @@ void* produce(void* arg) {
 
     sem_close(sem_empty);
     sem_close(sem_full);
-    sem_unlink("/sem_empty");
-    sem_unlink("/sem_full");
 
     munmap(ptr, SIZE);
     close(shm_fd);
@@ -75,5 +92,6 @@ int main() {
     // Wait for producer thread to finish
     pthread_join(producer_thread, NULL);
 
-    return 0;
+    std::cout << "Producer process has terminated." << std::endl;
+    exit(EXIT_SUCCESS);
 }
