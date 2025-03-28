@@ -10,6 +10,26 @@ consumer.cpp
 header.hpp
 shared.txt
 ```
+# Dependencies
+The following libraries are used in this program:
+```
+<stdio.h>
+<stdlib.h>
+<string.h>
+<fcntl.h>
+<sys/shm.h>
+<sys/stat.h>
+<sys/mman.h>
+<unistd.h>
+<semaphore.h>
+<pthread.h>
+<iostream>
+<random>
+<cstring>
+```
+Hardware Versions used:
+Visual Studio Code v1.98.2
+OS: Windows_NT x64 10.0.26100
 # Compilation
 Steps before compilation:
 ```
