@@ -1,10 +1,23 @@
 # Producer/Consumer
 # Description
-This project is a solution to the producer/consumer problem. The producer generates random numbers between 1-100 and places them in shared memory, which can only hold two items at a time. When shared memory is full, producer signals to the consumer procedure using two semaphores. After the consumer consumes these values, it flips the semaphore and returns control of the critical section to the producer. This cycle repeats until the end of a defined loop (set to 10 cycles).
+This C++ project is a solution to the producer/consumer problem. The producer generates random numbers between 1-100 and places them in a text files which acts as shared memory and can only hold two items at a time. When shared memory is full, producer signals to the consumer procedure using two semaphores. After the consumer consumes these values, it flips the semaphore and returns control of the critical section to the producer. This cycle repeats until the end of a defined loop (set to 10 cycles).
+# Installation & Execution
+This folder contains all the files needed.
+The files used during execution are:
+```
+producer.cpp
+consumer.cpp
+shared.txt
+```
 # Compilation
+Steps before compilation:
+```
+1. Load Visual Studio Code in a Linux/UNIX environment
+2. Use the terminal and enter the datapath to the folder
+```
 The consumer and producer are separate files. To compile, run:
 ```
-$ g++ producer.cpp -pthread -lrt -o producer\n
-$ g++ consumer.cpp -pthread -lrt -o consumer\n
+$ g++ producer.cpp -pthread -lrt -o producer
+$ g++ consumer.cpp -pthread -lrt -o consumer
 $ ./producer & ./consumer
 ```
