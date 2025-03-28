@@ -22,3 +22,6 @@ $ g++ producer.cpp -pthread -lrt -o producer
 $ g++ consumer.cpp -pthread -lrt -o consumer
 $ ./producer & ./consumer
 ```
+# Example
+https://github.com/user-attachments/assets/4d7070d4-154e-496a-8b10-eb28409dfe92
+
