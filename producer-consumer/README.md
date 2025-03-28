@@ -7,6 +7,7 @@ The files used during execution are:
 ```
 producer.cpp
 consumer.cpp
+header.hpp
 shared.txt
 ```
 # Compilation
