@@ -16,22 +16,22 @@ The following libraries are used in this program:
 <fstream>
 ```
 Hardware Versions used:  
-Visual Studio Code v1.98.2  
+Visual Studio Code v1.99.3
 OS: Windows_NT x64 10.0.26100  
 # Compilation
 Steps before compilation:  
   1. Load Visual Studio Code in a Linux/UNIX environment  
   2. Use the terminal and enter the datapath to the folder
 
-The consumer and producer are separate files. To compile, run:
+The banker and text files are separate. To compile, run:
 ```
 $ g++ -o banker banker.cpp
 $ ./banker tables.txt
 ```
 # Example
 https://github.com/user-attachments/assets/4d7070d4-154e-496a-8b10-eb28409dfe92
-Example 1: Producer is run in the background; consumer is run in the foreground
+Example 1: Bank processes the requested setup of resources and processes.
 
 https://github.com/user-attachments/assets/fbb50aea-e7c3-49d3-b9e8-d9763de08287
-Example 2: Producer and consumer are both run in the background
+Example 2: Bank does not have enough resources to meet customer request.
 
