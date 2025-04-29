@@ -32,6 +32,6 @@ $ ./banker tables.txt
 https://github.com/user-attachments/assets/444535c0-09a8-4d27-910f-768e9b219c77
 Example 1: Bank processes the requested setup of resources and processes.
 
-[https://github.com/user-attachments/assets/fbb50aea-e7c3-49d3-b9e8-d9763de08287](https://github.com/user-attachments/assets/2cb7ab6d-6906-4f2a-ab08-45a140d013c9)
+https://github.com/user-attachments/assets/1f57da8f-d7fc-4a96-9207-c16f9e9250cb
 Example 2: Bank does not have enough resources to meet customer request.
 
