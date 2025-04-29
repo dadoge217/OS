@@ -1,6 +1,6 @@
 # Banker's Algorithm
 # Description
-This C++ project is an implementation of the banker's algorithm. The producer generates random numbers between 1-100 and places them in a text files which acts as shared memory and can only hold two items at a time. When shared memory is full, producer signals to the consumer procedure using two semaphores. After the consumer consumes these values, it flips the semaphore and returns control of the critical section to the producer. This cycle repeats until the end of a defined loop (set to 10 cycles).
+This C++ project is an implementation of the banker's algorithm. The table initializing function reads in data from lines in an input file to create various tables (max, allocated, available). Then, the main function loops through the customer processes repeatedly. If the bank (max) has enoughs resources to meet the process's request, it allocates those resources, marks the customer as finished, and takes the resources back to reallocate. This repeats until all customers are satisfied or if there are not enough resources to meet a demand. Main will then print out the order and whether or not the processes are in a safe state.
 # Installation & Execution
 This folder contains all the files needed.
 The files used during execution are:
