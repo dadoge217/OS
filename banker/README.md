@@ -29,7 +29,7 @@ $ g++ -o banker banker.cpp
 $ ./banker tables.txt
 ```
 # Example
-https://github.com/user-attachments/assets/4d7070d4-154e-496a-8b10-eb28409dfe92
+[https://github.com/user-attachments/assets/4d7070d4-154e-496a-8b10-eb28409dfe92](https://github.com/dadoge217/OS/issues/1#issue-3026815226)
 Example 1: Bank processes the requested setup of resources and processes.
 
 https://github.com/user-attachments/assets/fbb50aea-e7c3-49d3-b9e8-d9763de08287
